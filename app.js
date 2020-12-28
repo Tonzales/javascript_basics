@@ -61,3 +61,65 @@ let newHelper2 = todos.filter(function(todo){
     return todo.isCompleted === true;
 });
 console.log(newHelper2);
+//Comparisons etc.
+/*
+ === datatype comparison also
+ == doesnt test type
+ && and in if-statement
+ || or in if-statement
+ */
+//shorthand if statements, ternary operator:
+const x = 11;
+const color = x > 10 ? "red" : "blue";
+//             if   then    else
+// if x is greater than ten, then red, else blue
+
+// Switch case
+switch (color) {
+    case "red":
+        console.log("color is red");
+        break;
+    case "blue":
+        console.log("color is blue");
+        break;
+    default:
+        console.log("color is something else");
+        break;
+}
+
+// Functions 
+let addNums = (num1, num2) => {
+    return num1 + num2;
+}
+//One line arrow function
+let addNums2 = (num1,num2) => num1+num2;
+console.log(addNums2(1,2));
+
+todos.forEach((todo)=> console.log(todo.text));
+
+// OOP
+//constructor function
+function Person(firstName,lastName, dob){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob); //Date object, these have handiful methods!
+    //Methods for object
+    // this.getBirthYear = function(){ 
+    //     return this.dob.getFullYear();
+    // }
+    this.getFullName= function(){
+        return `${this.firstName} ${this.lastName}`;
+    } 
+
+}
+
+//Instantiate object
+let person1 = new Person("Toni","Hämäläinen",'1997-05-03');
+console.log(person1.getFullName());
+
+//Prototypes, you can hide the methods from object when you log it etc.
+Person.prototype.getBirthYear = function(){
+    return this.dob.getFullYear();
+}
+console.log(person1.getBirthYear());
+console.log(person1);
