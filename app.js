@@ -123,3 +123,23 @@ Person.prototype.getBirthYear = function(){
 }
 console.log(person1.getBirthYear());
 console.log(person1);
+
+//Class 
+class Human {
+    constructor(firstName,lastName,dob){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = new Date(dob);
+    }
+
+    getBirthYear(){
+        return this.dob.getFullYear();
+    }
+    getFullName(){
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+let toni = new Human("Toni","Hamis","1990-5-3");
+console.log(toni);
+
+
